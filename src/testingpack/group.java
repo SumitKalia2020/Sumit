@@ -16,7 +16,7 @@ public class group{
     @BeforeClass
     void setUpClass() {
         System.setProperty("webdriver.chrome.driver", "C://Users//Sagar//Desktop//chromedriver.exe");
-
+        // beforeclass action to link the driver
     }
     @Test
     public void imagess() throws InterruptedException {
@@ -24,17 +24,18 @@ public class group{
 
         driver.get("http://www.way2automation.com/demo.html");
         List<WebElement> listImages = driver.findElements(By.tagName("img"));
-
-        int figures = 0;
-        for (WebElement image : listImages) {
-            if ( image.isDisplayed()) {
-                figures++;
+        //creating the list for getting the number of elements
+        int figures = 0; //variable to count the images
+        for (WebElement image : listImages) { //loop
+            if ( image.isDisplayed()) { //condition for images
+                figures++;    //increment
             }
         }
         System.out.println("No. of total displayed images: " + figures);
         driver.close();
     }
     @Test
+    //this test is same as above just a tag is changed i.e. for buttons
     public void buttons() throws InterruptedException {
         ChromeDriver driver =new ChromeDriver();
 

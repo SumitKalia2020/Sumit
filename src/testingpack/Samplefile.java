@@ -13,17 +13,19 @@ public class Samplefile{
         System.setProperty("webdriver.chrome.driver", "C://Users//Sagar//Desktop//chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
 
-        //Test Condition 1: If Page title matches with actualTitle then it finds email title and enters the value which we pass
         driver.get("https://www.way2automation.com/demo.html");
+        // for the site
         String actualTitle = "Welcome";
+        //title on the site
         Assert.assertEquals(driver.getTitle(), actualTitle);
-
         WebElement logo = driver.findElement(By.className("logo")  );
         Assert.assertEquals(true, logo.isDisplayed());
+        //checking if the logo is displayed or not
         System.out.println("pass");
+        //statement if it is correct
 
 
-        driver.close();
+        driver.close(); //to close the driver
     }
 
 }
