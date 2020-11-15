@@ -13,12 +13,12 @@ public class Samplefile{
         System.setProperty("webdriver.chrome.driver", "C://Users//Sagar//Desktop//chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
 
-        driver.get("https://www.way2automation.com/demo.html");
+        driver.get("https://opensource-demo.orangehrmlive.com/");
         // for the site
-        String actualTitle = "Welcome";
+        String actualTitle = "OrangeHRM";
         //title on the site
         Assert.assertEquals(driver.getTitle(), actualTitle);
-        WebElement logo = driver.findElement(By.className("logo")  );
+        WebElement logo = driver.findElement(By.id("divLogo")  );
         Assert.assertEquals(true, logo.isDisplayed());
         //checking if the logo is displayed or not
         System.out.println("pass");

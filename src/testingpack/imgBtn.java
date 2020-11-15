@@ -16,39 +16,36 @@ public class group{
     @BeforeClass
     void setUpClass() {
         System.setProperty("webdriver.chrome.driver", "C://Users//Sagar//Desktop//chromedriver.exe");
-        // beforeclass action to link the driver
     }
     @Test
     public void imagess() throws InterruptedException {
         ChromeDriver driver =new ChromeDriver();
 
-        driver.get("http://www.way2automation.com/demo.html");
+        driver.get("https://opensource-demo.orangehrmlive.com/");
         List<WebElement> listImages = driver.findElements(By.tagName("img"));
-        //creating the list for getting the number of elements
-        int figures = 0; //variable to count the images
-        for (WebElement image : listImages) { //loop
-            if ( image.isDisplayed()) { //condition for images
-                figures++;    //increment
+        int counts = 0;
+        for (WebElement image : listImages) {
+            if ( image.isDisplayed()) {
+                counts++;
             }
         }
-        System.out.println("No. of total displayed images: " + figures);
+        System.out.println("total Images: " + counts);
         driver.close();
     }
     @Test
-    //this test is same as above just a tag is changed i.e. for buttons
     public void buttons() throws InterruptedException {
         ChromeDriver driver =new ChromeDriver();
 
         driver.get("http://www.way2automation.com/demo.html");
         List<WebElement> listButtons = driver.findElements(By.tagName("button"));
 
-        int counts = 0;
+        int btns = 0;
         for (WebElement button : listButtons) {
-            if(button.getText().equals("buttonName")) {
-                counts++;
+            if(button.getText().equals("NameofButton")) {
+                btns++;
             }
         }
-        System.out.println("No. of total displyed buttons: " + counts);
+        System.out.println("Total Buttons: " + btns);
 
         driver.close();
     }
